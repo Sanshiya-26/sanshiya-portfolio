@@ -5,32 +5,33 @@ import avatar from "./assets/avatar_white_bg_updated-removebg-preview.png";
 export default function App() {
   const projects = [
     {
-      title: "ML Based Study Plan Recommendation",
-      desc: "Developed a DecisionTreeClassifier model in a Flask app to recommend tailored study plans using joblib and data preprocessing techniques.",
-      skills: ["Machine Learning", "scikit-learn", "Python"],
-      code: "#",
-      demo: "#"
+      title: "Flight Price Analysis Dashboard",
+      desc: "An interactive dashboard that visualizes flight prices across airlines, routes, and durations. Helps users identify the best-value flights and optimal booking times using data insights.",
+      skills: ["Python", "Pandas", "NumPy", "Plotly", "BeautifulSoup", "Requests", "Streamlit", "Excel"],
+      code: "https://github.com/Sanshiya-26/Flight-Price-Analysis-Dashboard.git",
+      demo: "https://flight-price-analysis-dashboard-e53iaqp6pwrvkjqudgsmz3.streamlit.app"
+    },
+    {
+      title: "Personalised Data Science Study Planner",
+      desc: "An intelligent study planner that recommends personalized data science topics based on user learning preferences and availability. It leverages a trained ML model to guide learners with tailored study plans and curated resources.",
+      skills: ["Python", "Scikit-learn", "Pandas", "NumPy", "Joblib", "Streamlit", "HTML/CSS"],
+      code: "https://github.com/Sanshiya-26/DS_Study_Planner.git",
+      demo: "https://dsstudyplanner-wo3c7muz32cjszfzhk8bkt.streamlit.app"
     },
     {
       title: "Customer Support Ticket Analysis",
-      desc: "Analyzed 50k+ support tickets with SQL & Excel. Built automated VBA reporting with conditional formatting and segmentation insights.",
-      skills: ["SQL", "Excel", "VBA"],
-      code: "#",
-      demo: "#"
+      desc: "Built an Excel-based dashboard analyzing 50,000 synthetic pension-related support tickets, focusing on SLA breaches, risk scoring, and complaint forecasting.",
+      skills: ["Excel", "PivotTables", "Conditional Formatting", "VBA"],
+      code: "https://github.com/Sanshiya-26/Customer-Support-Ticket-Analysis-Dashboard.git",
+      demo: "View Screenshot",
+      screenshot: "assets/screenshot.png"
     },
     {
-      title: "Flight Price Analysis Dashboard",
-      desc: "Scraped flight data using BeautifulSoup, visualized trends in Power BI, and automated reporting with Python & Excel.",
-      skills: ["BeautifulSoup", "Python", "Excel", "Power BI"],
-      code: "#",
-      demo: "#"
-    },
-    {
-      title: "Study Planner Web Application",
-      desc: "Flask app generating 100-day study plans with motivational quotes, CSV persistence, and interactive UI using HTML/CSS.",
-      skills: ["Flask", "Python", "HTML/CSS"],
-      code: "#",
-      demo: "#"
+      title: "Personal Portfolio",
+      desc: "Developed a modern, fully responsive portfolio website to present projects and experience, featuring a Streamlit-powered live demo dashboard with direct GitHub integration for code access.",
+      skills: ["React.js", "Vite", "PostCSS", "Chokidar", "Node.js", "JavaScript (ES6+)", "HTML5", "CSS3"],
+      code: "https://github.com/Sanshiya-26/sanshiya-portfolio.git",
+      demo: "This is the one you're looking at"
     }
   ];
 
@@ -100,8 +101,8 @@ export default function App() {
               <p>Tickets Analyzed (SQL Project)</p>
             </div>
             <div className="bg-white p-4 rounded shadow text-center">
-              <p className="font-bold text-3xl text-indigo-600">100 Days</p>
-              <p>Study Plan App Coverage</p>
+              <p className="font-bold text-3xl text-indigo-600">25+</p>
+              <p>Topics Mapped (ML, Python, Stats)</p>
             </div>
             <div className="bg-white p-4 rounded shadow text-center">
               <p className="font-bold text-3xl text-indigo-600">15+</p>
@@ -136,47 +137,20 @@ export default function App() {
         <h2 className="text-3xl font-bold text-indigo-600 text-center mb-12">Welcome to My Personal Data Lab</h2>
         <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
           {projects.map((project, index) => (
-           {projects.map((project, index) => (
-  <div key={index} className="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
-    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-    <p className="text-sm text-gray-700 mb-3">{project.desc}</p>
-    <div className="flex gap-2 flex-wrap text-xs mb-4">
-      {project.skills.map((skill, i) => (
-        <span key={i} className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">
-          {skill}
-        </span>
-      ))}
-    </div>
-
-    {/* Buttons */}
-    <div className="flex gap-4">
-      <a
-        href={
-          project.title === "ML Based Study Plan Recommendation"
-            ? "https://github.com/Sanshiya-26/flask-study-recommender"
-            : project.title === "Study Planner Web Application"
-            ? "https://github.com/Sanshiya-26/DS_Study_Planner"
-            : "#"
-        }
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-sm px-4 py-2 border border-indigo-600 text-indigo-600 rounded hover:bg-indigo-50"
-      >
-        View Code
-      </a>
-
-      <a
-        href={project.demo}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-sm px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700"
-      >
-        Live Demo
-      </a>
-    </div>
-  </div>
-))}
-
+            <div key={index} className="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
+              <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+              <p className="text-sm text-gray-700 mb-3">{project.desc}</p>
+              <div className="flex gap-2 flex-wrap text-xs mb-4">
+                {project.skills.map((skill, i) => (
+                  <span key={i} className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">{skill}</span>
+                ))}
+              </div>
+              <div className="flex gap-4">
+                <a href={project.code} target="_blank" rel="noopener noreferrer"
+                   className="text-sm px-4 py-2 border border-indigo-600 text-indigo-600 rounded hover:bg-indigo-50">View Code</a>
+                <a href={project.demo} target="_blank" rel="noopener noreferrer"
+                   className="text-sm px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">Live Demo</a>
+              </div>
             </div>
           ))}
         </div>
